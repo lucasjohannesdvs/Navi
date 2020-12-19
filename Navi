@@ -1,0 +1,60 @@
+#QUESTÃO 1
+i = 1
+num = 0
+cont = 0
+while i <= 5000000:
+   num = num + 1
+
+   if num%2 == 0 and num%37 == 0 and num%49 == 0:
+       cont = cont + 1
+       i = i + 1
+   else:
+       i = i + 1
+
+print(cont)
+
+#-------------------------------------------------------------------------------------------
+
+#QUESTÃO 2
+import math
+import numpy as np
+
+vetor = []
+i = 0
+a = np.array(vetor)
+
+while i < 10:
+   if i%2 ==0:
+       x = 3**i + 7*(math.factorial(i))
+       i += 1
+       vetor.append(x)
+   else:
+       x = 2**i + 4*math.log1p(i)
+       i += 1
+       vetor.append(x)
+
+maximo = np.max(vetor)
+media = np.average(vetor)
+
+print("O maior valor é " + str(maximo))
+print("O valor médio é " + str(media))
+
+#-------------------------------------------------------------------------------------------
+
+#QUESTÃO 3
+import numpy as np
+
+notas = [5, 3, 10, 2, 6]
+
+alunos = {
+   "aluno 1": notas[0],
+   "aluno 2": notas[1],
+   "aluno 3": notas[2],
+   "aluno 4": notas[3],
+   "aluno 5": notas[4]
+}
+maior = np.max(notas)
+
+for k, v in alunos.items():
+   if v == maior:
+       print("O " + k + " teve como nota " + str(alunos.get(k)))
